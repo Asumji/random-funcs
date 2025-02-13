@@ -1,9 +1,5 @@
 function pyramid(layers) {
-    const output = []
-    for (let i = 0; i < layers; i++) {
-        output.push(" ".repeat(layers-i)+"*".repeat(i*2+1))
-    }
-    return output.join("\n")
+    return ",".repeat(layers-1).split(",").reduce((a,v,i) => a = [...a," ".repeat(layers-i)+"*".repeat(i*2+1)],[]).join("\n")
 }
 
 console.log(pyramid(7))
